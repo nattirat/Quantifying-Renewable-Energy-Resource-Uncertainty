@@ -82,11 +82,11 @@ Package versions used in the analysis are listed below. Results may differ with 
 
 ## Reproducing the Analysis
 
-### Step 1 — Set data paths
+### Step 1: Set data paths
 
 At the top of each script, update the `folder_path` (scripts 01–06) or `path_r`, `path_s`, `path_w` (scripts 07–08) variables to point to the location of the processed CSV files on your machine.
 
-### Step 2 — Run marginal distribution scripts (04–06)
+### Step 2: Run marginal distribution scripts (04–06)
 
 These scripts fit KDE and parametric distributions (lognormal, Rayleigh, Gumbel) to each meteorological variable, run Monte Carlo simulations to compare goodness-of-fit, and export CDF (probability integral transform) CSV files. The exported CDF files are the inputs for scripts 07–08.
 
@@ -97,7 +97,7 @@ Scripts 04 and 05 export CDF files to:
 Script 06 exports to:
 - `x_r_CDF/`, `x_r_CDF_exports/`
 
-### Step 3 — Run copula scripts (07–08)
+### Step 3: Run copula scripts (07–08)
 
 Update the `path_r`, `path_s`, `path_w` variables in scripts 07 and 08 to point to the CDF export folders from Step 2. These scripts fit Joe-Clayton (BB7) copulas for each season-year combination, compute tail dependence coefficients, run bootstrap resampling of Kendall's tau, and produce the final figures and result CSVs.
 
